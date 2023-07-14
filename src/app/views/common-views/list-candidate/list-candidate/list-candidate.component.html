@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Suivi des entretien</h1>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ typePoste }}</h6>
+    </div>
+    <div class="card-body" *ngFor="let entretien of listeEntretien">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered display"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Nom & Prenom</th>
+              <th>date d'entretien</th>
+              <th>fedback</th>
+              <th>commentaire RH</th>
+              <th>Recruteur</th>
+              <th>voir Plus</th>
+            </tr>
+          </thead>
+          <tfoot></tfoot>
+          <tbody>
+            <tr>
+              <td>{{ entretien.nom }}</td>
+              <td>{{ entretien.datecreation }}</td>
+              <td>
+                <span class="badge badge-pill badge-primary">{{
+                  entretien.feedback?.nom
+                }}</span>
+              </td>
+              <td>{{ entretien.commentaire }}</td>
+              <td>{{ entretien.recruteur }}</td>
+              <td>
+                <button class="view-more">
+                  <span>Voir plus</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /.container-fluid -->
